@@ -1,0 +1,30 @@
+<apex:page controller="ProductDetails">
+    <apex:form >
+    
+        <apex:pageBlock title="Product Details Page">
+            <apex:pageMessages ></apex:pageMessages>
+  
+            <apex:pageBlockTable value="{!acc}" var="p">
+
+                    
+                    <apex:column value="{!p.name}"/>            
+                <apex:column value="{!p.Brands__c}"/>            
+                <apex:column value="{!p.Category__c}"/>            
+                <apex:column value="{!p.Models__c}"/>        
+                 <apex:column value="{!p.Cost__c}"/>  
+                 <apex:column value="{!p.Approval_Status__c}"/>  
+
+                 
+                <apex:column >
+              <apex:outputLink title="" value="/{!p.id}/e?retURL=/apex/{!$CurrentPage.Name}" style="font-weight:bold">Edit</apex:outputLink>        
+        </apex:column>
+    
+                
+            </apex:pageBlockTable>
+                    
+    </apex:pageBlock>
+    
+    </apex:form>
+
+
+</apex:page>

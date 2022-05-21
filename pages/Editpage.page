@@ -1,0 +1,29 @@
+<apex:page controller="DataTableEditRemoveController">
+        
+<apex:form id="form" >
+<apex:pageBlock title="Order">
+<apex:pageMessages ></apex:pageMessages>
+<apex:pageBlockTable value="{!odd}" var="order">
+<apex:column value="{!order.Customer_Name__c}"/>
+<apex:column value="{!order.Email__c}"/>
+<apex:column value="{!order.Phone__c}"/>
+<apex:column value="{!order.Address__c}"/>
+<apex:column value="{!order.Product__c}"/>
+<apex:column value="{!order.Quantity__c}"/>s
+<apex:column value="{!order.GST_number__c}"/>
+<apex:column value="{!order.Order_Status__c}"/>
+<apex:column value="{!order.Order_Date__c}"/>
+<apex:column value="{!order.Total_Price__c}"/>
+<apex:column >
+<apex:outputLink title="" value="//{!order.id}/e?retURL=/apex/{!$CurrentPage.Name}" style="font-weight:bold">Edit</apex:outputLink>
+</apex:column>
+<apex:column >
+<apex:commandButton action="{! DeleteAccount}" value="Delete" title="Delete" reRender="form">
+<apex:param name="delId" assignTo="{!delId}" value="{!order.Id}" />
+</apex:commandButton>
+
+</apex:column>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>
